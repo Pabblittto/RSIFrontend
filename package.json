@@ -12,6 +12,9 @@
     "@types/react-dom": "^18.0.5",
     "antd": "^4.20.7",
     "axios": "^0.27.2",
+    "base-64": "^1.0.0",
+    "buffer": "^6.0.3",
+    "nodejs-base64": "^2.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
@@ -42,5 +45,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/base-64": "^1.0.0"
   }
 }

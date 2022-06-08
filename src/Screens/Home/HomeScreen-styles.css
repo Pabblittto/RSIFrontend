@@ -1,0 +1,13 @@
+
+.home-screen-container{
+align-items: center;
+align-content: center;
+justify-content: center;
+text-align: center;
+display: flex;
+height: 100%;
+}
+
+.home-screen-text{
+    font-size: 50px;
+}

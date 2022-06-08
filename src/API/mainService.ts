@@ -12,6 +12,8 @@ mainService.interceptors.request.use(
     if (request.headers !== undefined) {
       request.headers["Authorization"] = AuthService.getInst().getEncoded();
     }
+
+    return request;
   },
   (error) => {
     return Promise.reject(error);

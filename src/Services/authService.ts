@@ -1,3 +1,5 @@
+import base64 from "base-64";
+
 export class AuthService {
   private static instance: AuthService;
   private username: string = "";
@@ -28,6 +30,8 @@ export class AuthService {
   }
 
   public getEncoded(): string {
-    return Buffer.from(`${this.username}:${this.password}`).toString("base64");
+    console.log(`${this.username}:${this.password}`);
+    const encoded = base64.encode(`${this.username}:${this.password}`);
+    return encoded;
   }
 }
