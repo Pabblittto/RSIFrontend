@@ -33,7 +33,7 @@ export const EventsScreen = () => {
     <div>
       <div className="edit-buttons-panel">
         <Button onClick={refreshData} className={"panel-button"}>
-          Refresh data
+          Refresh screen
         </Button>
         <Button onClick={addNewEvent} type="primary" className="panel-button">
           Add
