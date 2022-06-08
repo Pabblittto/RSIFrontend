@@ -2,12 +2,17 @@
  * Model based on model type from backend
  */
 export type AppEvent = {
-  EventID: number;
-  Name: string;
-  Type: string;
-  Description: string;
-  Date: Date;
-  Week: number;
-  Month: number;
-  Year: number;
+  eventId: number;
+  name: string;
+  type: EventTypes;
+  description: string;
+  date: string;
+  week: number;
+  month: number;
+  year: number;
 };
+
+export enum EventTypes {
+  music = "music",
+  meeting = "meeting",
+}

@@ -1,4 +1,5 @@
-import { Button } from "antd";
+import { Button, Table, Tag } from "antd";
+import { ColumnsType } from "antd/lib/table";
 import { useState } from "react";
 import { useEffect } from "react";
 import { getEvents } from "../../API/events-api";
@@ -23,11 +24,43 @@ export const EventsScreen = () => {
       endWithSuccess();
     } catch (err) {
       console.log(err);
+      setEvents([]);
       endWithFailure();
     }
   };
 
   const addNewEvent = () => {};
+
+  const columns: ColumnsType<AppEvent> = [
+    {
+      title: "Name",
+      dataIndex: "name",
+      key: "name",
+      render: (text) => text,
+    },
+    {
+      title: "Type",
+      dataIndex: "type",
+      key: "Type",
+      render: (text) => <Tag>{text}</Tag>,
+    },
+    {
+      title: "Date",
+      dataIndex: "date",
+      key: "date",
+      render: (text) => new Date(text).toDateString(),
+    },
+    {
+      title: "Actions",
+      dataIndex: "eventId",
+      key: "actions",
+      render: (text) => (
+        <Button danger type="default">
+          Delete
+        </Button>
+      ),
+    },
+  ];
 
   return (
     <div>
@@ -39,6 +72,7 @@ export const EventsScreen = () => {
           Add
         </Button>
       </div>
+      <Table dataSource={events} columns={columns} pagination={false} />
     </div>
   );
 };

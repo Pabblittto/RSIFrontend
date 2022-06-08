@@ -10,7 +10,9 @@ export const mainService = axios.create({
 mainService.interceptors.request.use(
   (request) => {
     if (request.headers !== undefined) {
-      request.headers["Authorization"] = AuthService.getInst().getEncoded();
+      request.headers[
+        "Authorization"
+      ] = `Basic ${AuthService.getInst().getEncoded()}`;
     }
 
     return request;
