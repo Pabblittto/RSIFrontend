@@ -14,7 +14,8 @@ export type AppEvent = {
 
 // assign the same value to each value! it's important
 export enum EventTypes {
-  music = "music",
+  concert = "concert",
   meeting = "meeting",
   "sport event" = "sport event",
+  "public duscussion" = "public duscussion",
 }
