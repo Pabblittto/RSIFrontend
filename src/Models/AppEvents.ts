@@ -12,7 +12,9 @@ export type AppEvent = {
   year: number;
 };
 
+// assign the same value to each value! it's important
 export enum EventTypes {
   music = "music",
   meeting = "meeting",
+  "sport event" = "sport event",
 }

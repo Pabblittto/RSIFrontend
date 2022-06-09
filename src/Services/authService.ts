@@ -30,7 +30,6 @@ export class AuthService {
   }
 
   public getEncoded(): string {
-    console.log(`${this.username}:${this.password}`);
     const encoded = base64.encode(`${this.username}:${this.password}`);
     return encoded;
   }
