@@ -14,3 +14,23 @@ export const deleteEvent = (id: number) =>
 
 export const updateEvent = (event: AppEvent) =>
   mainService.put(`/api/events/${event.eventId}`, event);
+
+export const getEventsByWeeks = (week: number) =>
+  mainService.get<AppEvent[]>(`/api/events/GetByWeek/${week}`);
+
+export const getEventsByDate = (date: string) =>
+  mainService.get<AppEvent[]>(`/api/events/GetByDate/${date}`);
+
+export const downloadEventListAsPDF = (eventList: string[]) =>
+  mainService.post(
+    "/api/events/getpdf",
+    {
+      events: eventList,
+    },
+    {
+      headers: {
+        Accept: "application/octet-stream",
+      },
+      responseType: "blob",
+    }
+  );

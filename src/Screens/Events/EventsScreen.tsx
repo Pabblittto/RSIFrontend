@@ -14,6 +14,7 @@ import {
   EditModalType,
   EventEditModal,
 } from "../../Components/EventEditModal/EventEditModal";
+import { SaveResultsAsPdfButton } from "../../Components/SaveResultsAsPdfButton/SaveResultsAsPdfButton";
 import { useLoadingMessage } from "../../Hooks/messageHook";
 import { AppEvent } from "../../Models/AppEvents";
 import "./EventsScreen-styles.css";
@@ -172,8 +173,14 @@ export const EventsScreen = () => {
         >
           Add
         </Button>
+        <SaveResultsAsPdfButton idList={events.map((e) => e.eventId)} />
       </div>
-      <Table dataSource={events} columns={columns} pagination={false} />
+      <Table
+        dataSource={events}
+        columns={columns}
+        pagination={false}
+        rowKey={(e) => e.eventId}
+      />
       <EventDetailsModal
         isShown={detailsModal?.showModal}
         event={detailsModal?.event}

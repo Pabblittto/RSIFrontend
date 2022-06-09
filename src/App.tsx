@@ -9,6 +9,7 @@ import { Layout, Menu } from "antd";
 import { Content } from "antd/lib/layout/layout";
 import Sider from "antd/lib/layout/Sider";
 import MenuItem from "antd/lib/menu/MenuItem";
+import { SearchScreen } from "./Screens/Search/SearchScreen";
 
 function App() {
   return (
@@ -22,12 +23,16 @@ function App() {
           <MenuItem>
             <Link to="events">Events</Link>
           </MenuItem>
+          <MenuItem>
+            <Link to="search">Search</Link>
+          </MenuItem>
         </Menu>
       </Sider>
       <Content className="main-cointainer">
         <Routes>
           <Route path="/" element={<HomeScreen />} />
           <Route path="/events" element={<EventsScreen />} />
+          <Route path="/search" element={<SearchScreen />} />
         </Routes>
       </Content>
     </Layout>
