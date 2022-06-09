@@ -37,7 +37,7 @@ export const EventAddModal = ({
     const newEvent: AppEvent = {
       eventId: 0,
       name: form.getFieldValue("name"),
-      date: new Date().toISOString(),
+      date: eventDate.toISOString(),
       month: eventDate.getMonth(),
       year: eventDate.getFullYear(),
       type: form.getFieldValue("type"),

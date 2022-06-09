@@ -13,4 +13,4 @@ export const deleteEvent = (id: number) =>
   mainService.delete(`/api/events/${id}`);
 
 export const updateEvent = (event: AppEvent) =>
-  mainService.put(`/api/events/${event.eventId}`);
+  mainService.put(`/api/events/${event.eventId}`, event);
